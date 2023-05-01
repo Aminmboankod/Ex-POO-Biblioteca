@@ -76,7 +76,7 @@ public class Libro {
     }
 
     public int getCopiasDisponibles() {
-        return 0;
+        return this.numCopiasDisp;
     }
 
     public void setCopiasDisponibles(int i) {

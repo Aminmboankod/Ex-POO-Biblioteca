@@ -55,14 +55,14 @@ public class Biblioteca {
 
     public void mostrarLibros() {
         System.out.println("Lista de libros:");
-        for (Libro libro : listaLibros) {
+        for (Libro libro : getListaLibros()) {
             System.out.println(libro.toString());
         }
     }
 
     public void mostrarLibrosDisponibles() {
         System.out.println("Lista de libros disponibles:");
-        for (Libro libro : listaLibros) {
+        for (Libro libro : getListaLibros()) {
             if (libro.getCopiasDisponibles() > 0) {
                 System.out.println(libro.toString());
             }

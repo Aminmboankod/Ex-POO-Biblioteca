@@ -21,18 +21,10 @@ public class App {
         personal.add(new Persona("María", "Sánchez", "87654321B", "password2"));
         personal.add(new Persona("Pedro", "Martínez", "11111111C", "password3"));
 
-        for (Persona persona : personal) {
-            biblioteca.añadirPersonal(persona);
-        }
-
         libros.add(new Libro("9788467842564", "El Quijote", "Miguel de Cervantes", "Anaya", 5, 3));
         libros.add(new Libro("9788498382543", "La Casa de Bernarda Alba", "Federico García Lorca", "Cátedra", 3, 1));
         libros.add(new Libro("9788420669217", "Crónica de una muerte anunciada", "Gabriel García Márquez", "Alfaguara",
                 2, 2));
-
-        for (Libro libro : libros) {
-            biblioteca.añadirLibro(libro);
-        }
 
         /*
          * A continuación, mostramos el menú principal del programa.

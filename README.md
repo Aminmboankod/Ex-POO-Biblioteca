@@ -70,3 +70,80 @@ libros realizadas por cada usuario. Teniendo en cuenta tú análisis aplica los
 cambios que requiera tu solución en el resto de clases y programa principal
 para dar soporte a lo solicitado.
 
+
+# Salida por CLI:
+
+- Ejemplo de salida en el menú principal:
+
+```
+=== MENÚ PRINCIPAL ===
+1. Gestionar libros
+2. Gestionar personal
+3. Salir
+```
+
+
+- Ejemplo de salida en el menú "Gestión de libros":
+
+```
+=== GESTIÓN DE LIBROS ===
+1. Mostrar lista de libros
+2. Mostrar lista de libros disponibles
+3. Añadir libro
+4. Eliminar libros
+5. Buscar libro por ISBN
+6. Volver al menú principal
+1
+Lista de libros:
+ISBN: 9788467842564
+Título: El Quijote
+Autor: Miguel de Cervantes
+Editorial: Anaya
+Número de copias: 5
+Número de copias disponibles: 3
+
+ISBN: 9788498382543
+Título: La Casa de Bernarda Alba
+Autor: Federico García Lorca
+Editorial: Cátedra
+Número de copias: 3
+Número de copias disponibles: 1
+
+ISBN: 9788420669217
+Título: Crónica de una muerte anunciada
+Autor: Gabriel García Márquez
+Editorial: Alfaguara
+Número de copias: 2
+Número de copias disponibles: 2
+
+```
+
+- Ejemplo de salida en el menú "Gestión de Personal":
+
+```
+=== GESTIÓN DE PERSONAL ===
+1. Mostrar lista de personal
+2. Añadir bibliotecario
+3. Eliminar bibliotecario
+4. Volver al menú principal
+1
+Nombre: Juan
+Apellidos: García
+NIF: 12345678A
+Contraseña: password1
+
+Nombre: María
+Apellidos: Sánchez
+NIF: 87654321B
+Contraseña: password2
+
+Nombre: Pedro
+Apellidos: Martínez
+NIF: 11111111C
+Contraseña: password3
+
+Nombre: Amin
+Apellidos: Mustafa
+NIF: 450302191Z
+Contraseña: supersecret
+```
