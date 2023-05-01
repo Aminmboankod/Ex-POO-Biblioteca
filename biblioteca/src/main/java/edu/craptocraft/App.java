@@ -1,8 +1,10 @@
 package edu.craptocraft;
 
+import java.util.Scanner;
+
 public class App {
     private static Scanner scanner = new Scanner(System.in);
-    private static Biblioteca biblioteca = new Biblioteca("Biblioteca del CIFP FBMoll");
+    private static Biblioteca biblioteca = new Biblioteca("Biblioteca del CIFP FBMoll", null, null);
 
     public static void main(String[] args) {
         int opcion = -1;

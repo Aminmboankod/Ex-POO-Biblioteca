@@ -1,17 +1,19 @@
-package main.java.edu.craptocraft;
+package edu.craptocraft;
+
+import java.util.ArrayList;
 
 public class Biblioteca {
     private String nombre;
     private ArrayList<Libro> listaLibros;
-    private ArrayList<Personal> listaPersonal;
+    private ArrayList<Persona> listaPersonal;
 
     public Biblioteca() {
         this.nombre = "";
         this.listaLibros = new ArrayList<Libro>();
-        this.listaPersonal = new ArrayList<Personal>();
+        this.listaPersonal = new ArrayList<Persona>();
     }
 
-    public Biblioteca(String nombre, ArrayList<Libro> listaLibros, ArrayList<Personal> listaPersonal) {
+    public Biblioteca(String nombre, ArrayList<Libro> listaLibros, ArrayList<Persona> listaPersonal) {
         this.nombre = nombre;
         this.listaLibros = listaLibros;
         this.listaPersonal = listaPersonal;
@@ -42,11 +44,11 @@ public class Biblioteca {
         this.listaLibros = listaLibros;
     }
 
-    public ArrayList<Personal> getListaPersonal() {
+    public ArrayList<Persona> getListaPersonal() {
         return listaPersonal;
     }
 
-    public void setListaPersonal(ArrayList<Personal> listaPersonal) {
+    public void setListaPersonal(ArrayList<Persona> listaPersonal) {
         this.listaPersonal = listaPersonal;
     }
 
@@ -60,7 +62,7 @@ public class Biblioteca {
     public void mostrarLibrosDisponibles() {
         System.out.println("Lista de libros disponibles:");
         for (Libro libro : listaLibros) {
-            if (libro.getNumCopiasDisponibles() > 0) {
+            if (libro.getCopiasDisponibles() > 0) {
                 System.out.println(libro.toString());
             }
         }
@@ -72,7 +74,7 @@ public class Biblioteca {
 
     public void eliminarPersonal(String nif) {
         for (Persona persona : listaPersonal) {
-            if (persona.getNif().equals(nif)) {
+            if (persona.getNIF().equals(nif)) {
                 listaPersonal.remove(persona);
                 break;
             }

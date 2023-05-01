@@ -1,4 +1,6 @@
-package main.java.edu.craptocraft;
+package edu.craptocraft;
+
+import java.util.List;
 
 public class Libro {
     private String ISBN;
@@ -87,5 +89,12 @@ public class Libro {
                 "Número de copias: " + numCopias + "\n" +
                 "Número de copias disponibles: " + numCopiasDisp + "\n";
 
+    }
+
+    public int getCopiasDisponibles() {
+        return 0;
+    }
+
+    public void setCopiasDisponibles(int i) {
     }
 }

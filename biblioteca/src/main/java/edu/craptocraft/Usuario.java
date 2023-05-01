@@ -1,4 +1,6 @@
-package main.java.edu.craptocraft;
+package edu.craptocraft;
+
+import java.util.ArrayList;
 
 public class Usuario extends Persona {
 

@@ -1,4 +1,4 @@
-package main.java.edu.craptocraft;
+package edu.craptocraft;
 
 public class Persona {
     private String nombre;
