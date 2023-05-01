@@ -1,11 +1,12 @@
 package edu.craptocraft;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Biblioteca {
     private String nombre;
-    private ArrayList<Libro> listaLibros;
-    private ArrayList<Persona> listaPersonal;
+    private List<Libro> listaLibros;
+    private List<Persona> listaPersonal;
 
     public Biblioteca() {
         this.nombre = "";
@@ -13,7 +14,7 @@ public class Biblioteca {
         this.listaPersonal = new ArrayList<Persona>();
     }
 
-    public Biblioteca(String nombre, ArrayList<Libro> listaLibros, ArrayList<Persona> listaPersonal) {
+    public Biblioteca(String nombre, List<Libro> listaLibros, List<Persona> listaPersonal) {
         this.nombre = nombre;
         this.listaLibros = listaLibros;
         this.listaPersonal = listaPersonal;
@@ -36,19 +37,19 @@ public class Biblioteca {
         }
     }
 
-    public ArrayList<Libro> getListaLibros() {
+    public List<Libro> getListaLibros() {
         return listaLibros;
     }
 
-    public void setListaLibros(ArrayList<Libro> listaLibros) {
+    public void setListaLibros(List<Libro> listaLibros) {
         this.listaLibros = listaLibros;
     }
 
-    public ArrayList<Persona> getListaPersonal() {
+    public List<Persona> getListaPersonal() {
         return listaPersonal;
     }
 
-    public void setListaPersonal(ArrayList<Persona> listaPersonal) {
+    public void setListaPersonal(List<Persona> listaPersonal) {
         this.listaPersonal = listaPersonal;
     }
 
@@ -68,7 +69,36 @@ public class Biblioteca {
         }
     }
 
-    public void aniadirPersonal(Persona persona) {
+    public void eliminarLibro(String ISBN, List<Libro> listaLibros) {
+        int posicion = buscarLibroISBN(ISBN, listaLibros);
+        if (posicion != -1) {
+            if (listaLibros.get(posicion).getNumCopiasDisp() == listaLibros.get(posicion).getNumCopias()) {
+                listaLibros.remove(posicion);
+                System.out.println("El libro se ha eliminado con éxito.");
+            } else {
+                System.out.println("El libro tiene reservas y no se puede eliminar.");
+            }
+        } else {
+            System.out.println("No se ha encontrado el libro con ISBN " + ISBN + ".");
+        }
+    }
+
+    public int buscarLibroISBN(String ISBN, List<Libro> listaLibros) {
+
+        int posicion = -1;
+
+        for (int i = 0; i < listaLibros.size(); i++) {
+
+            if (listaLibros.get(i).getISBN().equals(ISBN)) {
+                listaLibros.get(i).toString();
+                posicion = i;
+                return i;
+            }
+        }
+        return posicion;
+    }
+
+    public void añadirPersonal(Persona persona) {
         listaPersonal.add(persona);
     }
 
@@ -82,11 +112,15 @@ public class Biblioteca {
     }
 
     public void añadirBibliotecario(Persona bibliotecario) {
-        listaPersonal.add(bibliotecario);
+        getListaPersonal().add(bibliotecario);
     }
 
     public void eliminarBibliotecario(Persona bibliotecario) {
-        listaPersonal.remove(bibliotecario);
+        getListaPersonal().remove(bibliotecario);
+    }
+
+    public void añadirLibro(Libro libro) {
+        getListaLibros().add(libro);
     }
 
     @Override
@@ -96,5 +130,11 @@ public class Biblioteca {
                 ", listaLibros=" + listaLibros +
                 ", listaPersonal=" + listaPersonal +
                 '}';
+    }
+
+    public void mostrarPersonal() {
+        for (Persona persona : listaPersonal) {
+            System.out.println(persona.toString());
+        }
     }
 }
